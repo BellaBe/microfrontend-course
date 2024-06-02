@@ -6,6 +6,7 @@ export default () => {
     return (
         <div>
             <h1>Container</h1>
+            <h2>Trigger action</h2>
             <MarketingApp />
         </div>
     )
