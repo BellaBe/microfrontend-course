@@ -22,8 +22,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy to S3
+      - name: Set AWS cli package
         uses: shinyinc/action-aws-cli@v1.2
+      - name: Deploy to S3
         run: aws s3 sync dist s3://{{secrets.AWS_S3_BUCKET_NAME}}/container/latest
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
